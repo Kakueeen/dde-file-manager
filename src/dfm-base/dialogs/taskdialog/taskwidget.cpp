@@ -778,6 +778,7 @@ void TaskWidget::onMouseHover(const bool hover)
     }
 
     adjustSize();
+    update();
 }
 
 QString TaskWidget::formatTime(qint64 second) const
@@ -910,7 +911,7 @@ void TaskWidget::paintEvent(QPaintEvent *event)
     if (opt.state & QStyle::State_MouseOver) {
         int radius = 8;
         QRectF bgRect;
-        bgRect.setSize(QSize(684, size().height()));
+        bgRect.setSize(/*QSize(684, size().height())*/size());
         QPainterPath path;
         path.addRoundedRect(bgRect, radius, radius);
         QColor bgColor;
